@@ -1,0 +1,816 @@
+/* ============================================================
+   APP.CSS — Wedding Invitation: Quoc Tuan & Ai Kieu
+   ============================================================ */
+
+/* ── Design tokens ── */
+.app {
+  --bg: #f5f3f0;
+  --bg-white: #ffffff;
+  --text-dark: #2c2c2c;
+  --text-gray: #666;
+  --text-light: #999;
+  --accent-crimson: #7a2040;
+  --accent-rose: #c0505a;
+  --accent-pink: #e88090;
+  --accent-gold: #d4b878;
+  --font-cursive: 'Great Vibes', 'Alex Brush', cursive;
+  --font-display: 'Playfair Display SC', 'Cormorant Garamond', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(0,0,0,.12);
+}
+
+/* ── Scroll reveal ── */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .75s ease, transform .75s ease;
+}
+[data-animate].animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   1. HERO  (Image 1 — Wedding Invitation Cover)
+   ============================================================ */
+.hero-section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 500 / 820;
+  overflow: hidden;
+}
+
+/* Wedding photo — masked with teardrop, above the border */
+.hero-photo {
+  position: absolute;
+  top: 17%;
+  left: 5.7%;
+  width: 89.8%;
+  height: 82.1%;
+  z-index: 2;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  -webkit-mask-image: url('/images/mask-teardrop.png');
+  mask-image: url('/images/mask-teardrop.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Decorative border with teardrop mask — behind the photo */
+.hero-border-masked {
+  position: absolute;
+  top: 16.22%;
+  left: 5.44%;
+  width: 91.81%;
+  height: 84.77%;
+  z-index: 1;
+  -webkit-mask-image: url('/images/mask-teardrop.png');
+  mask-image: url('/images/mask-teardrop.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.hero-border-inner {
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Wedding Invitation curved text overlay */
+.hero-text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.hero-curved-text {
+  width: 80%;
+  max-width: 400px;
+}
+.hero-curved-text text {
+  fill: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-cursive, 'Times New Roman', serif);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+/* Frame overlay — on top of everything */
+.hero-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  pointer-events: none;
+}
+
+/* ============================================================
+   2. INVITATION INFO  (Image 2)
+   ============================================================ */
+.invitation-section {
+  background: var(--bg);
+  padding: 60px 20px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.invitation-names {
+  font-family: var(--font-cursive);
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  color: var(--text-dark);
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+.invitation-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 28px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 14px 0;
+}
+.invitation-date-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 20px;
+}
+.invitation-date-item .date-label {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  color: var(--text-gray);
+  letter-spacing: 1px;
+}
+.invitation-date-number {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1;
+  padding: 0 22px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.invitation-vertical-text {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: var(--font-serif);
+  font-size: .95rem;
+  letter-spacing: 8px;
+  color: rgba(0,0,0,.06);
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.invitation-address {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.address-script {
+  font-family: var(--font-cursive);
+  font-size: 1.5rem;
+  color: var(--accent-rose);
+}
+.address-value {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  color: var(--text-dark);
+}
+.invitation-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.invitation-photo {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(0,0,0,.1);
+}
+.invitation-photo img {
+  width: 100%; height: auto; display: block;
+}
+
+/* ============================================================
+   3. ABOUT US  (Image 3)
+   ============================================================ */
+.about-section {
+  background: var(--bg-white);
+  padding: 60px 20px;
+  text-align: center;
+}
+.about-invite-text { margin-bottom: 36px; }
+.about-invite-text p {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.05rem, 3.8vw, 1.45rem);
+  color: var(--accent-crimson);
+  line-height: 2.2;
+}
+.about-heading {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 6px;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+.about-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+.about-photo {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0,0,0,.1);
+}
+.about-photo img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.about-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+.about-count-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 18px;
+  border: 1px solid #e0d8d0;
+  border-radius: 8px;
+  min-width: 64px;
+}
+.count-value {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+.count-label {
+  font-size: .68rem;
+  color: var(--text-light);
+  letter-spacing: 1px;
+}
+.about-today {
+  font-size: 1.15rem;
+  color: var(--accent-rose);
+  margin-bottom: 36px;
+}
+.about-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.about-bride, .about-groom {
+  font-family: var(--font-cursive);
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  color: var(--accent-pink);
+  line-height: 1.2;
+}
+.about-amp {
+  font-family: var(--font-cursive);
+  font-size: 2rem;
+  color: var(--accent-gold);
+}
+
+/* ============================================================
+   POEM SHARED STYLES  (dark gradient + script text)
+   ============================================================ */
+.poem-header-dark {
+  background: linear-gradient(135deg, #4a1020 0%, #7a2040 50%, #5a1525 100%);
+  padding: 40px 24px;
+  text-align: center;
+}
+.poem-header-red {
+  background: linear-gradient(135deg, #6a1525 0%, #8a2035 50%, #5a1020 100%);
+}
+.poem-text-script {
+  font-family: var(--font-cursive);
+  font-size: clamp(1rem, 3.8vw, 1.45rem);
+  color: var(--accent-gold);
+  line-height: 2.4;
+}
+
+/* ============================================================
+   4. POEM OVAL  (Image 4)
+   ============================================================ */
+.poem-oval-section { background: var(--bg-white); }
+.poem-oval-photo-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px;
+}
+.oval-frame {
+  width: min(340px, 78vw);
+  height: min(400px, 95vw);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,.12);
+}
+.oval-frame img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+/* ============================================================
+   5. LOVE GALLERY  (Image 5)
+   ============================================================ */
+.love-gallery-section { background: var(--bg-white); }
+.love-content {
+  padding: 36px 20px 40px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.love-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 8px;
+  color: var(--text-dark);
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+.love-quote { margin-bottom: 26px; }
+.love-quote p {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--text-dark);
+  letter-spacing: 1.5px;
+}
+.love-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: minmax(140px, auto);
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.love-photo {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.love-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.love-photo-1 { grid-row: span 2; }
+.love-photo-4 { grid-row: span 2; }
+.love-freedom {
+  font-family: var(--font-body);
+  font-size: .6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  text-align: right;
+}
+
+/* ============================================================
+   6. POEM PHOTO  (Image 6)
+   ============================================================ */
+.poem-photo-section { background: var(--bg-white); }
+.poem-photo-content {
+  padding: 0 20px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.poem-main-photo {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.1);
+}
+.poem-bottom-text {
+  padding: 36px 20px 48px;
+  text-align: center;
+}
+.poem-bottom-text p {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  line-height: 2.4;
+}
+
+/* ============================================================
+   7. LOVE YOU  (Image 7)
+   ============================================================ */
+.loveyou-section { background: var(--bg-white); }
+.loveyou-content {
+  padding: 36px 20px 48px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+.loveyou-main {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  margin-bottom: 28px;
+}
+.loveyou-photo {
+  flex: 1;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.1);
+  width: 100%;
+  object-fit: cover;
+}
+.loveyou-text-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+  color: var(--text-dark);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.loveyou-heart {
+  color: var(--accent-rose);
+  font-size: 1.1rem;
+}
+.loveyou-small-oval {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,.1);
+}
+.loveyou-small-oval img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+/* ============================================================
+   8. SAVE THE DATE  (Images 8-9)
+   ============================================================ */
+.savedate-section {
+  background: var(--bg-white);
+  padding: 60px 20px;
+  text-align: center;
+}
+.savedate-heading {
+  font-family: var(--font-cursive);
+  font-size: clamp(2.4rem, 8vw, 3.5rem);
+  color: var(--accent-rose);
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+/* Calendar */
+.calendar-wrap {
+  max-width: 360px;
+  margin: 0 auto 36px;
+}
+.calendar {
+  border: 2px solid var(--accent-pink);
+  border-radius: 8px;
+  padding: 18px;
+  background: #fff;
+}
+.cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.cal-month, .cal-year {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  color: var(--accent-rose);
+  font-weight: 600;
+}
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--accent-pink);
+  margin-bottom: 8px;
+}
+.cal-weekday {
+  font-family: var(--font-body);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .8px;
+  color: var(--text-gray);
+  text-align: center;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.cal-cell {
+  font-family: var(--font-body);
+  font-size: .82rem;
+  color: var(--text-dark);
+  text-align: center;
+  padding: 7px 0;
+  position: relative;
+}
+.cal-cell.cal-empty { visibility: hidden; }
+.cal-cell.cal-highlight { font-weight: 700; color: var(--accent-rose); }
+.cal-heart {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .55rem;
+  color: var(--accent-rose);
+}
+
+/* Time */
+.savedate-time { margin-bottom: 36px; }
+.savedate-time-label {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  letter-spacing: 10px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.savedate-time-value {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--accent-rose);
+  margin-bottom: 4px;
+}
+.savedate-time-lunar {
+  font-family: var(--font-serif);
+  font-size: .92rem;
+  color: var(--accent-rose);
+}
+
+/* Map */
+.savedate-map {
+  max-width: 480px;
+  margin: 0 auto 36px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+
+/* Address */
+.savedate-address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.address-display-heading {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 4px;
+  color: var(--text-dark);
+  font-weight: 400;
+}
+.address-display-name {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--accent-rose);
+  font-style: italic;
+}
+.savedate-photo {
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0,0,0,.1);
+}
+.savedate-photo img { width: 100%; display: block; }
+
+/* ============================================================
+   9. RSVP  (Image 10)
+   ============================================================ */
+.rsvp-section {
+  background: var(--bg);
+  padding: 60px 20px;
+}
+.rsvp-card {
+  background: var(--bg-white);
+  border-radius: 16px;
+  padding: 36px 26px;
+  max-width: 420px;
+  margin: 0 auto 36px;
+  box-shadow: 0 6px 28px rgba(0,0,0,.06);
+}
+.rsvp-heading {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 22px;
+  text-align: center;
+}
+.rsvp-error {
+  color: var(--accent-rose);
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: .88rem;
+}
+.rsvp-field { margin-bottom: 18px; }
+.rsvp-field > label {
+  display: block;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 7px;
+}
+.rsvp-field input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: .88rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color .3s;
+  box-sizing: border-box;
+}
+.rsvp-field input[type="text"]:focus { border-color: var(--accent-rose); }
+.rsvp-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rsvp-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .84rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 6px 0;
+}
+.rsvp-radio input[type="radio"] { display: none; }
+.radio-dot {
+  width: 18px; height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color .3s;
+}
+.rsvp-radio.active .radio-dot { border-color: var(--accent-rose); }
+.rsvp-radio.active .radio-dot::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 8px; height: 8px;
+  background: var(--accent-rose);
+  border-radius: 50%;
+}
+.rsvp-btn {
+  width: 100%;
+  padding: 13px;
+  background: var(--accent-rose);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .3s, transform .2s;
+}
+.rsvp-btn:hover {
+  background: var(--accent-crimson);
+  transform: translateY(-1px);
+}
+.rsvp-btn:disabled { opacity: .55; cursor: not-allowed; }
+.rsvp-success-msg {
+  text-align: center;
+  padding: 18px 0;
+}
+.rsvp-success-msg h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.rsvp-success-msg p {
+  color: var(--text-gray);
+  margin-bottom: 18px;
+}
+.rsvp-envelopes {
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+  text-align: center;
+}
+.rsvp-qr-wrap {
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.qr-card {
+  background: var(--accent-rose);
+  border-radius: 14px;
+  padding: 20px 28px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+.qr-name {
+  font-family: var(--font-cursive);
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+.qr-image {
+  width: 170px; height: 170px;
+  background: #fff;
+  border-radius: 8px;
+  object-fit: contain;
+  padding: 8px;
+}
+.qr-hint {
+  font-size: .82rem;
+  color: var(--accent-rose);
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   10. THANK YOU  (Image 11)
+   ============================================================ */
+.thankyou-section {
+  background: var(--bg-white);
+  padding: 60px 20px 50px;
+  text-align: center;
+}
+.thankyou-poem { margin-bottom: 36px; }
+.thankyou-poem p {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  color: var(--text-dark);
+  line-height: 2.4;
+}
+.thankyou-text {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 5px;
+  color: var(--text-dark);
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+.thankyou-img {
+  max-width: 200px;
+  margin: 0 auto;
+  display: block;
+}
+.thankyou-emoji {
+  font-size: 5rem;
+  opacity: .55;
+}
+
+/* ============================================================
+   RESPONSIVE — Scale the 500px layout on smaller screens
+   ============================================================ */
+@media (min-width: 768px) {
+  .about-photo img  { height: 360px; }
+  .love-grid        { gap: 10px; }
+}
