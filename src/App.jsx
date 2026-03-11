@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Hero from './components/Hero'
+import EnvelopeReveal from './components/EnvelopeReveal'
 import InvitationInfo from './components/InvitationInfo'
 import AboutUs from './components/AboutUs'
 import PoemOval from './components/PoemOval'
@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="app" style={{ zoom: scale }}>
       <main>
-        <Hero />
+        <EnvelopeReveal />
         <InvitationInfo />
         <AboutUs />
         <PoemOval />

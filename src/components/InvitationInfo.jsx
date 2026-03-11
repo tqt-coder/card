@@ -5,7 +5,7 @@ function InvitationInfo() {
   return (
     <section className="invitation-section">
       <h2 className="invitation-names" data-animate>
-        {GROOM} &amp; {BRIDE}
+        {/* {GROOM} &amp; {BRIDE} */}
       </h2>
 
       <div className="invitation-date-row" data-animate>
