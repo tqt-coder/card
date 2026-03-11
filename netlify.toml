@@ -3,6 +3,24 @@
   command = "npm run build"
   publish = "dist"
 
+# Enable post-processing
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
 # Headers – cache static assets
 [[headers]]
   for = "/assets/*"
@@ -12,7 +30,7 @@
 [[headers]]
   for = "/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 # SPA client-side routing
 [[redirects]]
