@@ -4,7 +4,6 @@ import InvitationInfo from './components/InvitationInfo'
 import AboutUs from './components/AboutUs'
 import PoemOval from './components/PoemOval'
 import LoveGallery from './components/LoveGallery'
-import PoemPhoto from './components/PoemPhoto'
 import LoveYou from './components/LoveYou'
 import SaveTheDate from './components/SaveTheDate'
 import RSVP from './components/RSVP'
@@ -51,7 +50,6 @@ function App() {
         <AboutUs />
         <PoemOval />
         <LoveGallery />
-        <PoemPhoto />
         <LoveYou />
         <SaveTheDate />
         <RSVP />

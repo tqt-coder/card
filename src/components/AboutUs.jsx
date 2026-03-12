@@ -26,8 +26,18 @@ function AboutUs() {
   return (
     <section className="about-section">
       <div className="about-invite-text" data-animate>
-        <p>Mời bạn tới dự lễ thành hôn của chúng mình</p>
-        <p>Để cùng chứng kiến khoảnh khắc thiêng liêng nhất</p>
+        <p>
+          Gửi đến gia đình và bạn bè thân mến,&nbsp;
+        </p>
+        <p>
+          Cảm ơn bạn đã dành thời gian quý báu<br />
+          để cùng chúng mình chung vui trong ngày đặc biệt này.<br />
+          Chúng mình vô cùng biết ơn vì luôn có sự đồng hành và ủng hộ của bạn,<br />
+          và thật vinh hạnh khi được chia sẻ niềm hạnh phúc của chúng mình cùng bạn.&nbsp;
+        </p>
+        <p>
+          Trân trọng kính mời bạn đến dự lễ cưới của chúng mình
+        </p>
       </div>
 
       <h2 className="about-heading" data-animate>ABOUT US</h2>
@@ -64,11 +74,11 @@ function AboutUs() {
         <p className="about-today" data-animate>🎊 Hôm nay là ngày trọng đại! 🎊</p>
       )}
 
-      <div className="about-names" data-animate>
+      {/* <div className="about-names" data-animate>
         <span className="about-bride">{BRIDE}</span>
         <span className="about-amp">&amp;</span>
         <span className="about-groom">{GROOM}</span>
-      </div>
+      </div> */}
     </section>
   )
 }

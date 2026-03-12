@@ -3,13 +3,6 @@ import React from 'react'
 function LoveGallery() {
   return (
     <section className="love-gallery-section">
-      <div className="poem-header-dark">
-        <p className="poem-text-script">Đường tới muôn dặm thênh thang</p>
-        <p className="poem-text-script">Bao nhiều phong cảnh rõ ràng trước sau.</p>
-        <p className="poem-text-script">Quan trọng vẫn mãi bên lâu</p>
-        <p className="poem-text-script">Là người sánh bước, cùng nhau vui buồn.</p>
-      </div>
-
       <div className="love-content">
         <h3 className="love-title" data-animate>LOVE</h3>
 
@@ -34,7 +27,6 @@ function LoveGallery() {
           </div>
         </div>
 
-        <p className="love-freedom" data-animate>LOVE AND FREEDOM</p>
       </div>
     </section>
   )
