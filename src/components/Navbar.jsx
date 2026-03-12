@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <nav className={`navbar${scrolled ? ' navbar-scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="navbar-container">
-        <a href="#home" className="navbar-brand" onClick={closeMenu}>Tấn &amp; Kiều</a>
+        <a href="#home" className="navbar-brand" onClick={closeMenu}>Tuấn &amp; Kiều</a>
 
         <button
           className={`navbar-toggle${menuOpen ? ' open' : ''}`}

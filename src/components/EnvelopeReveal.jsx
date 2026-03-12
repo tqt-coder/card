@@ -64,12 +64,13 @@ function EnvelopeReveal() {
         }
         .er-header-line {
           font-family: 'Montserrat', sans-serif;
-          font-size: 10px;
+          font-size: 28px;
           font-weight: 600;
-          letter-spacing: 6px;
+          letter-spacing: -3px;
           text-transform: uppercase;
           color: #a08c6a;
-          margin-bottom: 4px;
+          margin: 0 10px 10px;
+          padding: 0px 20px 0px;
         }
         .er-header-title {
           font-family: 'Playfair Display SC', serif;
@@ -96,16 +97,10 @@ function EnvelopeReveal() {
           z-index: 10;
         }
         .er-name {
-          font-family: 'Great Vibes', 'Alex Brush', cursive;
-          font-size: 32px;
+          font-family: 'Alex Brush';
+          font-size: 48px;
           color: #2c2c2c;
-          font-weight: 400;
-        }
-        .er-name-amp {
-          font-family: 'Cormorant Garamond', serif;
-          font-size: 40px;
-          font-style: italic;
-          color: #a08c6a;
+          font-weight: 500;
         }
 
         /* ── Photo bg wrap (decoration between names and envelope) ── */
@@ -238,7 +233,7 @@ function EnvelopeReveal() {
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
-          width: 340px;
+          width: 354px;
           bottom: 40px;
           z-index: 10;
           border-radius: 6px;
@@ -397,13 +392,12 @@ function EnvelopeReveal() {
       <div className="er-header">
         <div className="er-header-line">W E D D I N G&nbsp;&nbsp;&nbsp;I N V I T A T I O N</div>
         <div className="er-header-title">THIỆP MỜI CƯỚI</div>
-        <div className="er-heart-divider">&#10084;</div>
       </div>
 
       {/* Couple names */}
       <div className="er-names-row">
         <span className="er-name">{BRIDE}</span>
-        <span className="er-name-amp">&amp;</span>
+        <span className="er-name-amp er-heart-divider">&#10084;</span>
         <span className="er-name">{GROOM}</span>
       </div>
 
