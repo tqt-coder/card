@@ -1,10 +1,38 @@
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState, useRef, useCallback, useEffect } from 'react'
 
-const MUSIC_URL = '/audio/wedding-music.wav'
+const MUSIC_URL = '/audio/wedding_audio.m4a'
 
 function AudioControl() {
   const [playing, setPlaying] = useState(false)
   const audioRef = useRef(null)
+  const triedAutoplay = useRef(false)
+
+  // Attempt autoplay on mount; if blocked, play on first user interaction
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    const tryPlay = () => {
+      audio.play().then(() => setPlaying(true)).catch(() => {})
+    }
+
+    tryPlay()
+
+    const onInteraction = () => {
+      if (!audio.paused) return
+      tryPlay()
+      document.removeEventListener('click', onInteraction, true)
+      document.removeEventListener('touchstart', onInteraction, true)
+    }
+
+    document.addEventListener('click', onInteraction, true)
+    document.addEventListener('touchstart', onInteraction, true)
+
+    return () => {
+      document.removeEventListener('click', onInteraction, true)
+      document.removeEventListener('touchstart', onInteraction, true)
+    }
+  }, [])
 
   const toggle = useCallback((e) => {
     e.stopPropagation()
@@ -44,7 +72,7 @@ function AudioControl() {
           height: 100%;
           border-radius: 50%;
           object-fit: cover;
-          background: #ccc;
+          background: #000;
         }
         .audio-control.playing img {
           animation: cd-spin 3s linear infinite;
