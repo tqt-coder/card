@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
+import { BASE } from '../config'
 
-const MUSIC_URL = '/audio/wedding_audio.m4a'
+const MUSIC_URL = `${BASE}/audio/wedding_audio.m4a`
 
 function AudioControl() {
   const [playing, setPlaying] = useState(false)
@@ -89,7 +90,7 @@ function AudioControl() {
         aria-label={playing ? 'Tắt nhạc' : 'Bật nhạc'}
         type="button"
       >
-        <img src="/images/audio-cd.png" alt="music icon" />
+        <img src={`${BASE}/images/audio-cd.png`} alt="music icon" />
       </button>
     </>
   )

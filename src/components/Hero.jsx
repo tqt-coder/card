@@ -1,4 +1,5 @@
 import React from 'react'
+import { BASE } from '../config'
 
 function Hero() {
   return (
@@ -6,19 +7,19 @@ function Hero() {
       {/* Wedding photo (behind) */}
       <div
         className="hero-photo"
-        style={{ backgroundImage: 'url(/images/wedding/wedding-01.jpg)' }}
+        style={{ backgroundImage: `url(${BASE}/images/wedding/wedding-01.jpg)` }}
       />
       {/* Decorative border frame with teardrop mask */}
       <div className="hero-border-masked">
         <div
           className="hero-border-inner"
-          style={{ backgroundImage: 'url(/images/border-frame.png)' }}
+          style={{ backgroundImage: `url(${BASE}/images/border-frame.png)` }}
         />
       </div>
       {/* Frame overlay with transparent cutout (on top) */}
       <div
         className="hero-frame"
-        style={{ backgroundImage: 'url(/images/bg_image.png)' }}
+        style={{ backgroundImage: `url(${BASE}/images/bg_image.png)` }}
       />
       {/* Wedding Invitation curved text */}
       <div className="hero-text-overlay">

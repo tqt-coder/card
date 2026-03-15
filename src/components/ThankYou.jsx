@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { BASE } from '../config'
 
 function ThankYou() {
   const [imgError, setImgError] = useState(false)
@@ -16,7 +17,7 @@ function ThankYou() {
         <h2 className="thankyou-text">THANK YOU</h2>
         {!imgError ? (
           <img
-            src="/images/wedding/thankyou.png"
+            src={`${BASE}/images/wedding/thankyou.png`}
             alt="Thank you"
             className="thankyou-img"
             onError={() => setImgError(true)}

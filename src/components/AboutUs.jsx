@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { GROOM, BRIDE, DATE_ISO } from '../config'
+import { GROOM, BRIDE, DATE_ISO, BASE } from '../config'
 
 const WEDDING_DATE = new Date(DATE_ISO)
 
@@ -44,10 +44,10 @@ function AboutUs() {
 
       <div className="about-photos" data-animate>
         <div className="about-photo">
-          <img src="/images/wedding/wedding-04.jpg" alt={BRIDE} loading="lazy" />
+          <img src={`${BASE}/images/wedding/wedding-04.jpg`} alt={BRIDE} loading="lazy" />
         </div>
         <div className="about-photo">
-          <img src="/images/wedding/wedding-05.jpg" alt={GROOM} loading="lazy" />
+          <img src={`${BASE}/images/wedding/wedding-05.jpg`} alt={GROOM} loading="lazy" />
         </div>
       </div>
 

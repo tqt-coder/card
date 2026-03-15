@@ -3,6 +3,11 @@
 //  Edit values here or use .env (VITE_ prefix required).
 // ============================================================
 
+// ── Base URL (matches vite.config.js `base`) ─────────────────
+// Strips trailing slash so we can write `${BASE}/images/...`
+const raw = import.meta.env.BASE_URL ?? '/'
+export const BASE = raw.endsWith('/') ? raw.slice(0, -1) : raw
+
 // ── Couple ───────────────────────────────────────────────────
 export const GROOM = import.meta.env.VITE_GROOM_NAME ?? 'Quốc Tuấn'
 export const BRIDE = import.meta.env.VITE_BRIDE_NAME ?? 'Ái Kiều'

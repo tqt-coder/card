@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BRIDE } from '../config'
+import { BRIDE, BASE } from '../config'
 
 const FORMSPREE_ID = 'YOUR_FORM_ID'
 const USE_FORMSPREE = FORMSPREE_ID !== 'YOUR_FORM_ID'
@@ -38,7 +38,7 @@ function RSVP() {
       <section className="rsvp-section">
         <div className="rsvp-card">
           <div className="rsvp-success-msg">
-            <div className="rsvp-envelopes">������</div>
+            <div className="rsvp-envelopes">������</div>
             <h2>Cảm ơn bạn!</h2>
             <p>Chúng tôi đã nhận được xác nhận của bạn.</p>
             <button className="rsvp-btn" onClick={() => setStatus('idle')}>Gửi lại</button>
@@ -94,10 +94,10 @@ function RSVP() {
       </div>
 
       <div className="rsvp-qr-wrap" data-animate>
-        <div className="rsvp-envelopes">������</div>
+        <div className="rsvp-envelopes">������</div>
         <div className="qr-card">
           <h3 className="qr-name">{BRIDE}</h3>
-          <img src="/images/wedding/qr-bride.png" alt="QR Code" className="qr-image" />
+          <img src={`${BASE}/images/wedding/qr-bride.png`} alt="QR Code" className="qr-image" />
         </div>
         <p className="qr-hint">Quét mã QR để gửi quà mừng tới<br />chúng mình nhé</p>
       </div>

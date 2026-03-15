@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
+import { BASE } from '../config'
 
 // ── Gallery image list ──────────────────────────────────────
 const IMAGES = [
-  { src: '/images/wedding/wedding-02.jpg', alt: 'Ảnh cưới 1' },
-  { src: '/images/wedding/wedding-03.jpg', alt: 'Ảnh cưới 2' },
-  { src: '/images/wedding/wedding-06.jpg', alt: 'Ảnh cưới 3' },
-  { src: '/images/wedding/wedding-11.jpg', alt: 'Ảnh cưới 4' },
-  { src: '/images/wedding/wedding-12.jpg', alt: 'Ảnh cưới 5' },
-  { src: '/images/wedding/wedding-13.jpg', alt: 'Ảnh cưới 6' },
-  { src: '/images/wedding/wedding-14.jpg', alt: 'Ảnh cưới 7' },
-  { src: '/images/wedding/wedding-15.jpg', alt: 'Ảnh cưới 8' },
-  { src: '/images/wedding/wedding-09.jpg', alt: 'Ảnh cưới 9' },
+  { src: `${BASE}/images/wedding/wedding-02.jpg`, alt: 'Ảnh cưới 1' },
+  { src: `${BASE}/images/wedding/wedding-03.jpg`, alt: 'Ảnh cưới 2' },
+  { src: `${BASE}/images/wedding/wedding-06.jpg`, alt: 'Ảnh cưới 3' },
+  { src: `${BASE}/images/wedding/wedding-11.jpg`, alt: 'Ảnh cưới 4' },
+  { src: `${BASE}/images/wedding/wedding-12.jpg`, alt: 'Ảnh cưới 5' },
+  { src: `${BASE}/images/wedding/wedding-13.jpg`, alt: 'Ảnh cưới 6' },
+  { src: `${BASE}/images/wedding/wedding-14.jpg`, alt: 'Ảnh cưới 7' },
+  { src: `${BASE}/images/wedding/wedding-15.jpg`, alt: 'Ảnh cưới 8' },
+  { src: `${BASE}/images/wedding/wedding-09.jpg`, alt: 'Ảnh cưới 9' },
 ]
 // ────────────────────────────────────────────────────────────
 

@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { GROOM, BRIDE } from '../config'
 import AudioControl from './AudioControl'
+import { BASE } from '../config'
 
-const PHOTO_URL = '/images/wedding/wedding-01.jpg'
+const PHOTO_URL = `${BASE}/images/wedding/wedding-01.jpg`
 
 function EnvelopeReveal() {
   const [phase, setPhase] = useState('idle') // idle | opening | open
@@ -107,7 +108,7 @@ function EnvelopeReveal() {
         .er-photo-bg-wrap {
           width: 50px;
           height: 50px;
-          background-image: url('/images/photo-bg-wrap.png');
+          background-image: url('${BASE}/images/photo-bg-wrap.png');
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;

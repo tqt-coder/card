@@ -1,5 +1,5 @@
 import React from 'react'
-import { GROOM, BRIDE, RESTAURANT_NAME, TIME_CEREMONY } from '../config'
+import { GROOM, BRIDE, RESTAURANT_NAME, TIME_CEREMONY, BASE } from '../config'
 
 function InvitationInfo() {
   return (
@@ -29,10 +29,10 @@ function InvitationInfo() {
 
       <div className="invitation-photos">
         <div className="invitation-photo" data-animate>
-          <img src="/images/wedding/wedding-02.jpg" alt="Ảnh cưới" loading="lazy" />
+          <img src={`${BASE}/images/wedding/wedding-02.jpg`} alt="Ảnh cưới" loading="lazy" />
         </div>
         <div className="invitation-photo" data-animate>
-          <img src="/images/wedding/wedding-03.jpg" alt="Ảnh cưới" loading="lazy" />
+          <img src={`${BASE}/images/wedding/wedding-03.jpg`} alt="Ảnh cưới" loading="lazy" />
         </div>
       </div>
     </section>
