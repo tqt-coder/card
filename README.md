@@ -87,3 +87,14 @@ Edit the following files to personalise:
 ---
 
 Made with ❤️ for the special day
+
+
+# Deploy:
+## 1/ Install library:
+```
+   npm install gh-pages --save-dev
+```
+## 2/ Update package.json for GitHub Pages
+```
+   "homepage": "https://tqt-coder.github.io/card"
+```
