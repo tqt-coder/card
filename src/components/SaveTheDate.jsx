@@ -46,9 +46,6 @@ function SaveTheDate() {
       </div>
 
       <div className="savedate-time" data-animate>
-        <h3 className="savedate-time-label">TIME</h3>
-        <p className="savedate-time-value">{DATE_FULL}</p>
-        <p className="savedate-time-lunar">{LUNAR_DATE}</p>
       </div>
 
       {RESTAURANT_MAP && (

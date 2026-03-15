@@ -61,7 +61,6 @@ function EnvelopeReveal() {
           text-align: center;
           margin-bottom: 8px;
           position: relative;
-          z-index: 10;
         }
         .er-header-line {
           font-family: 'Montserrat', sans-serif;
@@ -95,7 +94,6 @@ function EnvelopeReveal() {
           gap: 24px;
           margin-bottom: 40px;
           position: relative;
-          z-index: 10;
         }
         .er-name {
           font-family: 'Alex Brush';
@@ -252,7 +250,7 @@ function EnvelopeReveal() {
           width: 100%;
           height: auto;
           display: block;
-          aspect-ratio: 4 / 3;
+          aspect-ratio: 3 / 3;
           object-fit: cover;
         }
 
