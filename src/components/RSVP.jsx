@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { BRIDE, BASE } from '../config'
 
-const FORMSPREE_ID = 'YOUR_FORM_ID'
-const USE_FORMSPREE = FORMSPREE_ID !== 'YOUR_FORM_ID'
+// Paste your Google Apps Script Web App URL here after deploying (see README instructions)
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxmTghHy2kHO1zFmeu52n-RJpopMB5G_DhEdLejassyU6ukEEzqWQjC1-8PAe2NPGDs6w/exec'
 
 function RSVP() {
   const [form, setForm] = useState({ name: '', attending: 'yes' })
@@ -16,13 +16,17 @@ function RSVP() {
     e.preventDefault()
     setStatus('loading')
     try {
-      if (USE_FORMSPREE) {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      if (GOOGLE_SHEET_URL !== 'YOUR_GOOGLE_SHEET_URL') {
+        await fetch(GOOGLE_SHEET_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(form),
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: form.name,
+            attending: form.attending,
+            timestamp: new Date().toLocaleString('vi-VN'),
+          }),
         })
-        if (!res.ok) throw new Error('Form error')
       } else {
         await new Promise((r) => setTimeout(r, 1200))
       }
