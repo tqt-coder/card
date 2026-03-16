@@ -14,25 +14,30 @@ function AudioControl() {
     if (!audio) return
 
     const tryPlay = () => {
-      audio.play().then(() => setPlaying(true)).catch(() => {})
+      audio.play().then(() => {
+        setPlaying(true)
+        cleanup()
+      }).catch(() => {})
     }
-
-    tryPlay()
 
     const onInteraction = () => {
-      if (!audio.paused) return
+      if (!audio.paused) { cleanup(); return }
       tryPlay()
-      document.removeEventListener('click', onInteraction, true)
-      document.removeEventListener('touchstart', onInteraction, true)
     }
 
+    const cleanup = () => {
+      document.removeEventListener('click', onInteraction, true)
+      document.removeEventListener('touchend', onInteraction, true)
+    }
+
+    // Try autoplay first
+    tryPlay()
+
+    // Fallback: wait for user gesture (touchend works on iOS, click on desktop/Android)
     document.addEventListener('click', onInteraction, true)
-    document.addEventListener('touchstart', onInteraction, true)
+    document.addEventListener('touchend', onInteraction, true)
 
-    return () => {
-      document.removeEventListener('click', onInteraction, true)
-      document.removeEventListener('touchstart', onInteraction, true)
-    }
+    return cleanup
   }, [])
 
   const toggle = useCallback((e) => {
