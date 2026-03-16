@@ -17,6 +17,15 @@ export const DATE_ISO   = import.meta.env.VITE_WEDDING_DATE         ?? '2026-04-
 export const DATE_FULL  = import.meta.env.VITE_WEDDING_DATE_DISPLAY ?? 'Chủ nhật ngày 26 tháng 04 năm 2026'
 export const DATE_SHORT = import.meta.env.VITE_WEDDING_DATE_SHORT   ?? '26 · 04 · 2026'
 
+// Parsed date parts from DATE_ISO
+const _weddingDate = new Date(DATE_ISO)
+const _dayNames = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy']
+const _monthNames = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+export const WEDDING_DAY_NAME  = _dayNames[_weddingDate.getDay()]
+export const WEDDING_DAY       = _weddingDate.getDate()
+export const WEDDING_MONTH     = 'Tháng ' + _monthNames[_weddingDate.getMonth()]
+export const WEDDING_YEAR      = _weddingDate.getFullYear()
+
 // ── Lunar date ───────────────────────────────────────────────
 export const LUNAR_DATE = import.meta.env.VITE_LUNAR_DATE ?? 'Ngày 10 tháng 03 âm lịch'
 

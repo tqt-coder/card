@@ -1,5 +1,5 @@
 import React from 'react'
-import { GROOM, BRIDE, RESTAURANT_NAME, TIME_CEREMONY, BASE } from '../config'
+import { GROOM, BRIDE, RESTAURANT_NAME, TIME_CEREMONY, WEDDING_DAY_NAME, WEDDING_DAY, WEDDING_MONTH, WEDDING_YEAR, BASE } from '../config'
 
 function InvitationInfo() {
   return (
@@ -10,13 +10,13 @@ function InvitationInfo() {
 
       <div className="invitation-date-row" data-animate>
         <div className="invitation-date-item">
-          <span className="date-label">Chủ Nhật</span>
+          <span className="date-label">{WEDDING_DAY_NAME}</span>
           <span className="date-label">{TIME_CEREMONY}</span>
         </div>
-        <div className="invitation-date-number">26</div>
+        <div className="invitation-date-number">{WEDDING_DAY}</div>
         <div className="invitation-date-item">
-          <span className="date-label">Tháng 04</span>
-          <span className="date-label">2026</span>
+          <span className="date-label">{WEDDING_MONTH}</span>
+          <span className="date-label">{WEDDING_YEAR}</span>
         </div>
       </div>
 

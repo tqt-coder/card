@@ -542,7 +542,7 @@
 }
 .cal-month,
 .cal-year {
-  font-family: var(--font-serif);
+  font-family: 'ui-monospace';
   font-size: 1.9rem;
   color: var(--accent-rose);
   font-weight: 600;
@@ -582,13 +582,14 @@
 .cal-cell.cal-highlight {
   font-weight: 700;
   color: var(--accent-rose);
+  font-size: 0.9rem;
 }
 .cal-heart {
   position: absolute;
-  bottom: -2px;
+  bottom: -13px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.55rem;
+  font-size: 1.2rem;
   color: var(--accent-rose);
 }
 

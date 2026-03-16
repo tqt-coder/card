@@ -1,10 +1,17 @@
 import React from 'react'
-import { RESTAURANT_NAME, RESTAURANT_MAP, LUNAR_DATE, DATE_FULL, BASE } from '../config'
+import { RESTAURANT_NAME, RESTAURANT_MAP, LUNAR_DATE, DATE_FULL, DATE_ISO, BASE } from '../config'
 
-/*  April 2026 calendar
-    April 1 = Wednesday → offset 2 (Mon-based, 0-indexed)
-    30 days total, highlight day 26 (Sunday)               */
-const CAL = { offset: 2, days: 30, highlight: 26 }
+// Compute calendar data from the wedding date in .env
+const _weddingDate = new Date(DATE_ISO)
+const _year = _weddingDate.getFullYear()
+const _month = _weddingDate.getMonth() // 0-indexed
+const _day = _weddingDate.getDate()
+// Day-of-week of the 1st of the month (Mon=0 based)
+const _firstDow = (new Date(_year, _month, 1).getDay() + 6) % 7
+// Total days in the month
+const _totalDays = new Date(_year, _month + 1, 0).getDate()
+
+const CAL = { offset: _firstDow, days: _totalDays, highlight: _day }
 
 function CalendarGrid() {
   const cells = []
@@ -31,8 +38,8 @@ function SaveTheDate() {
       <div className="calendar-wrap" data-animate>
         <div className="calendar">
           <div className="cal-header">
-            <span className="cal-month">4</span>
-            <span className="cal-year">2026</span>
+            <span className="cal-month">{_month + 1}</span>
+            <span className="cal-year">{_year}</span>
           </div>
           <div className="cal-weekdays">
             {['MON','TUE','WED','THU','FRI','SAT','SUN'].map((d) => (
