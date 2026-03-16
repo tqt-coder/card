@@ -1,4 +1,5 @@
 import React from 'react'
+import { BASE } from '../config'
 
 function PoemOval() {
   return (
@@ -12,7 +13,7 @@ function PoemOval() {
 
       <div className="poem-oval-photo-wrap" data-animate>
         <div className="oval-frame">
-          <img src="/images/wedding/wedding-06.jpg" alt="Ảnh cưới" loading="lazy" />
+          <img src={`${BASE}/images/wedding/wedding-06.jpg`} alt="Ảnh cưới" loading="lazy" />
         </div>
       </div>
     </section>

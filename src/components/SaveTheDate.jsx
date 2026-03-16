@@ -1,5 +1,5 @@
 import React from 'react'
-import { RESTAURANT_NAME, RESTAURANT_MAP, LUNAR_DATE, DATE_FULL } from '../config'
+import { RESTAURANT_NAME, RESTAURANT_MAP, LUNAR_DATE, DATE_FULL, BASE } from '../config'
 
 /*  April 2026 calendar
     April 1 = Wednesday → offset 2 (Mon-based, 0-indexed)
@@ -69,7 +69,7 @@ function SaveTheDate() {
       </div>
 
       <div className="savedate-photo" data-animate>
-        <img src="/images/wedding/wedding-11.jpg" alt="Ảnh cưới" loading="lazy" />
+        <img src={`${BASE}/images/wedding/wedding-11.jpg`} alt="Ảnh cưới" loading="lazy" />
       </div>
     </section>
   )
