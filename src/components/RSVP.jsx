@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BRIDE, BASE } from '../config'
+import { BRIDE, BASE, QR_CODE, QR_CODE_NAME } from '../config'
 
 // Paste your Google Apps Script Web App URL here after deploying (see README instructions)
 const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxmTghHy2kHO1zFmeu52n-RJpopMB5G_DhEdLejassyU6ukEEzqWQjC1-8PAe2NPGDs6w/exec'
@@ -100,8 +100,8 @@ function RSVP() {
       <div className="rsvp-qr-wrap" data-animate>
         <div className="rsvp-envelopes">🎁💝</div>
         <div className="qr-card">
-          <h3 className="qr-name">{BRIDE}</h3>
-          <img src={`${BASE}/images/wedding/qr-bride.jpg`} alt="QR Code" className="qr-image" />
+          <h3 className="qr-name">{QR_CODE_NAME}</h3>
+          <img src={`${BASE}/images/wedding/${QR_CODE}`} alt="QR Code" className="qr-image" />
         </div>
         <p className="qr-hint">Quét mã QR để gửi quà mừng tới<br />chúng mình nhé</p>
       </div>

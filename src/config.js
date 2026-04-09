@@ -51,3 +51,5 @@ export const CUNG_ONG_BA_DATE_DISPLAY = import.meta.env.VITE_CUNG_ONG_BA_DATE_DI
 export const TIME_CEREMONY  = import.meta.env.VITE_TIME_CEREMONY  ?? '11:00'
 export const TIME_VU_QUY    = import.meta.env.VITE_TIME_VU_QUY    ?? '17:00'
 export const TIME_RECEPTION = import.meta.env.VITE_TIME_RECEPTION ?? '17:00'
+export const QR_CODE        = import.meta.env.VITE_QR                ?? 'qr-bride.jpg'
+export const QR_CODE_NAME   = import.meta.env.VITE_QR_NAME         ?? 'Quốc Tuấn'

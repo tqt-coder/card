@@ -8,9 +8,9 @@ function ThankYou() {
     <section className="thankyou-section">
       <div className="thankyou-poem" data-animate>
         <p>Non sông một chặng đường dài</p>
-        <p>Ba sinh hữu hạnh, duyên này thành đôi.</p>
-        <p>Tiệc vui ngắn ngủi mà thôi</p>
-        <p>Nếu điều sơ suất, mong người lượng thương.</p>
+        <p>Ba sinh hữu hạnh, duyên trời thành đôi</p>
+        <p>Tiệc vui chưa trọn niềm vui</p>
+        <p>Sơ suất điều gì, mong người bỏ qua</p>
       </div>
 
       <div className="thankyou-graphic" data-animate>
@@ -24,7 +24,11 @@ function ThankYou() {
             loading="lazy"
           />
         ) : (
-          <div className="thankyou-emoji">💒</div>
+          <img
+            src={`${BASE}/images/wedding/wedding-13.png`}
+            alt="Wedding Icon"
+            style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '0 auto', display: 'block' }}
+          />
         )}
       </div>
     </section>

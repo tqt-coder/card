@@ -42,7 +42,7 @@ function SaveTheDate() {
             <span className="cal-year">{_year}</span>
           </div>
           <div className="cal-weekdays">
-            {['MON','TUE','WED','THU','FRI','SAT','SUN'].map((d) => (
+            {['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'].map((d) => (
               <div key={d} className="cal-weekday">{d}</div>
             ))}
           </div>
@@ -76,7 +76,7 @@ function SaveTheDate() {
       </div>
 
       <div className="savedate-photo" data-animate>
-        <img src={`${BASE}/images/wedding/wedding-11.jpg`} alt="Ảnh cưới" loading="lazy" />
+        <img src={`${BASE}/images/wedding/wedding-12.jpg`} alt="Ảnh cưới" loading="lazy" />
       </div>
     </section>
   )

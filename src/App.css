@@ -239,21 +239,29 @@
   text-align: center;
 }
 .about-invite-text {
-  margin-bottom: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  margin-bottom: 45px;
+  padding: 0 10px;
 }
 .about-invite-text p {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 13px;
-  color: #8b2f30;
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 400;
   text-align: center;
-  line-height: 1.62;
+  line-height: 1.8;
   word-break: break-word;
-  margin: 0;
+  margin: 0 0 16px;
+}
+.about-invite-text p:first-child {
+  font-family: var(--font-cursive);
+  font-size: 1.8rem;
+  color: var(--accent-rose);
+  margin-bottom: 12px;
+}
+.about-invite-text p:last-child {
+  font-weight: 600;
+  color: var(--accent-crimson);
+  letter-spacing: 0.5px;
 }
 .about-heading {
   font-family: var(--font-display);
@@ -386,23 +394,24 @@
   margin: 0 auto;
 }
 .love-title {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  letter-spacing: 8px;
-  color: var(--text-dark);
-  font-weight: 400;
+  font-family: var(--font-cursive);
+  font-size: 4.2rem;
+  color: var(--accent-rose);
+  font-weight: 500;
   text-align: center;
 }
 .love-quote {
   margin-bottom: 26px;
+  text-align: center;
 }
 .love-quote p {
-  font-family: var(--font-body);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
   line-height: 1.6;
-  color: var(--text-dark);
-  letter-spacing: 1.5px;
+  color: var(--text-gray);
+  letter-spacing: 0.5px;
 }
 .love-grid {
   display: grid;
@@ -858,10 +867,7 @@
   margin: 0 auto;
   display: block;
 }
-.thankyou-emoji {
-  font-size: 5rem;
-  opacity: 0.55;
-}
+
 
 /* ============================================================
    RESPONSIVE — Scale the 500px layout on smaller screens

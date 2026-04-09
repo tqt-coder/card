@@ -7,10 +7,10 @@ function getTimeLeft() {
   const diff = WEDDING_DATE - new Date()
   if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0, over: true }
   return {
-    days:    Math.floor(diff / 86_400_000),
-    hours:   Math.floor((diff % 86_400_000) / 3_600_000),
-    minutes: Math.floor((diff % 3_600_000)  / 60_000),
-    seconds: Math.floor((diff % 60_000)     / 1_000),
+    days: Math.floor(diff / 86_400_000),
+    hours: Math.floor((diff % 86_400_000) / 3_600_000),
+    minutes: Math.floor((diff % 3_600_000) / 60_000),
+    seconds: Math.floor((diff % 60_000) / 1_000),
     over: false,
   }
 }
@@ -40,7 +40,7 @@ function AboutUs() {
         </p>
       </div>
 
-      <h2 className="about-heading" data-animate>ABOUT US</h2>
+      <h2 className="about-heading" data-animate>PHÓNG SỰ</h2>
 
       <div className="about-photos" data-animate>
         <div className="about-photo">
