@@ -363,7 +363,6 @@ function EnvelopeReveal() {
           bottom: 40px;
           z-index: 10;
           border-radius: 6px;
-          overflow: hidden;
           opacity: 0;
           transition: bottom 1s cubic-bezier(0.34, 1.56, 0.64, 1),
                       opacity 0.6s ease;
@@ -379,6 +378,40 @@ function EnvelopeReveal() {
           display: block;
           aspect-ratio: 3 / 3;
           object-fit: cover;
+          border-radius: 6px;
+        }
+
+        /* ── Letter hearts ── */
+        .er-letter-hearts {
+          position: absolute;
+          bottom: -120px;
+          left: 0;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+          pointer-events: none;
+          z-index: 11;
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          margin-top: 50px;
+        }
+        .er-letter.revealed .er-letter-hearts {
+          opacity: 1;
+        }
+        .lh-heart {
+          font-size: 50px;
+          color: white;
+          text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(192, 80, 90, 1);
+          animation: lh-heart-pulse 1.5s ease-in-out infinite alternate;
+        }
+        .lh-heart:nth-child(2n) {
+          animation-delay: 0.5s;
+        }
+
+        @keyframes lh-heart-pulse {
+          from { transform: scale(1); opacity: 0.7; }
+          to { transform: scale(1.3); opacity: 1; }
         }
 
         /* ── Wax seal ── */
@@ -427,88 +460,72 @@ function EnvelopeReveal() {
           pointer-events: none;
           z-index: 8;
         }
+        /* ── Hearts ── */
+        .er-hearts {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 8;
+          overflow: hidden;
+        }
         .er-heart {
           position: absolute;
-          width: 0;
-          height: 0;
+          width: 14px;
+          height: 14px;
+          background: #c0505a;
+          transform: rotate(-45deg);
           opacity: 0;
           transition: opacity 0.3s ease;
         }
-        .er-envelope-container.open .er-heart {
-          opacity: 1;
-        }
         .er-heart::before,
         .er-heart::after {
-          content: '';
-          position: absolute;
+          content: "";
+          width: 14px;
+          height: 14px;
           background: #c0505a;
-          border-radius: 50% 50% 0 0;
+          border-radius: 50%;
+          position: absolute;
         }
         .er-heart::before {
-          width: 26px;
-          height: 24px;
-          top: -15px;
-          left: -13px;
-          transform: rotate(-45deg);
-          transform-origin: bottom right;
+          top: -7px;
+          left: 0;
         }
         .er-heart::after {
-          width: 26px;
-          height: 24px;
-          top: -15px;
-          left: 0;
-          transform: rotate(45deg);
-          transform-origin: bottom left;
+          top: 0;
+          left: 7px;
         }
 
-        /* Heart positions & animations */
-        .er-heart.a1 {
-          top: 40px;
-          left: 50%;
-          transform: translate(-50%, 0) scale(0.9);
-          animation: er-heart-float-1 2s ease-in-out infinite;
-          animation-delay: 0.3s;
-        }
-        .er-heart.a2 {
-          top: 90px;
-          left: 10%;
-          transform: scale(0.6);
-          animation: er-heart-float-2 2.5s ease-in-out infinite;
-          animation-delay: 0.6s;
-        }
-        .er-heart.a3 {
-          top: 85px;
-          right: 8%;
-          left: auto;
-          transform: scale(0.6);
-          animation: er-heart-float-3 2.2s ease-in-out infinite;
-          animation-delay: 0.1s;
+        .er-envelope-container.open .er-heart {
+          animation: er-heart-rise 3s ease-out infinite;
         }
 
-        @keyframes er-heart-float-1 {
-          0%, 100% { transform: translate(-50%, 0) scale(0.8); }
-          50% { transform: translate(-50%, -12px) scale(0.85); }
-        }
-        @keyframes er-heart-float-2 {
-          0%, 100% { transform: scale(0.55) translateY(0); }
-          50% { transform: scale(0.6) translateY(-10px); }
-        }
-        @keyframes er-heart-float-3 {
-          0%, 100% { transform: scale(0.55) translateY(0) rotate(10deg); }
-          50% { transform: scale(0.6) translateY(-14px) rotate(-5deg); }
+        @keyframes er-heart-rise {
+          0% {
+            opacity: 0;
+            transform: translateY(150px) rotate(-45deg) scale(0.5);
+          }
+          15% {
+            opacity: 1;
+          }
+          80% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(-250px) rotate(-45deg) scale(1.2);
+          }
         }
 
-        /* ── Hint text ── */
-        .er-hint {
-          font-family: 'Great Vibes', 'Alex Brush', cursive;
-          font-size: 22px;
-          color: #2c2c2c;
-          margin-top: 20px;
-          letter-spacing: 1px;
-          opacity: 0.7;
-          position: relative;
-          z-index: 10;
-        }
+        /* Define multiple heart paths */
+        .er-heart.h1 { left: 20%; animation-delay: 0s; }
+        .er-heart.h2 { left: 40%; animation-delay: 0.5s; }
+        .er-heart.h3 { left: 60%; animation-delay: 1.2s; }
+        .er-heart.h4 { left: 80%; animation-delay: 0.8s; }
+        .er-heart.h5 { left: 30%; animation-delay: 1.8s; }
+        .er-heart.h6 { left: 70%; animation-delay: 2.2s; }
       `}</style>
 
       {/* Audio CD control */}
@@ -534,9 +551,12 @@ function EnvelopeReveal() {
       <div className={`er-envelope-container ${isOpen ? 'open' : ''} ${visible ? 'visible' : ''}`}>
         {/* Hearts */}
         <div className="er-hearts">
-          <div className="er-heart a1" />
-          <div className="er-heart a2" />
-          <div className="er-heart a3" />
+          <div className="er-heart h1" />
+          <div className="er-heart h2" />
+          <div className="er-heart h3" />
+          <div className="er-heart h4" />
+          <div className="er-heart h5" />
+          <div className="er-heart h6" />
         </div>
 
         {/* Top flap */}
@@ -550,6 +570,14 @@ function EnvelopeReveal() {
         {/* Letter / photo */}
         <div className={`er-letter ${phase === 'open' ? 'revealed' : ''}`}>
           <img src={PHOTO_URL} alt="Wedding" loading="eager" />
+          <div className="er-letter-hearts">
+            <span className="lh-heart">❤</span>
+            <span className="lh-heart">❤</span>
+            <span className="lh-heart">❤</span>
+            <span className="lh-heart">❤</span>
+            <span className="lh-heart">❤</span>
+            <span className="lh-heart">❤</span>
+          </div>
         </div>
 
         {/* Pocket front */}
