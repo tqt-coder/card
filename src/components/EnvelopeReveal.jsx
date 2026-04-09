@@ -5,9 +5,115 @@ import { BASE } from '../config'
 
 const PHOTO_URL = `${BASE}/images/wedding/wedding-01.jpg`
 
+function Fireworks({ active }) {
+  const canvasRef = useRef(null)
+
+  useEffect(() => {
+    if (!active) return
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    let animationId
+    let particles = []
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+    }
+    window.addEventListener('resize', resize)
+    resize()
+
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x
+        this.y = y
+        this.color = color
+        this.velocity = {
+          x: (Math.random() - 0.5) * 14,
+          y: (Math.random() - 0.5) * 10
+        }
+        this.alpha = 1
+        this.friction = 0.96
+        this.gravity = 0.12
+      }
+      draw() {
+        ctx.save()
+        ctx.globalAlpha = this.alpha
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2)
+        ctx.fillStyle = this.color
+        ctx.fill()
+        ctx.restore()
+      }
+      update() {
+        this.velocity.x *= this.friction
+        this.velocity.y *= this.friction
+        this.velocity.y += this.gravity
+        this.x += this.velocity.x
+        this.y += this.velocity.y
+        this.alpha -= 0.012
+      }
+    }
+
+    const colors = ['#ff0000', '#ffd700', '#ff69b4', '#00ced1', '#adff2f', '#ffffff']
+    const createFirework = (x, y) => {
+      const color = colors[Math.floor(Math.random() * colors.length)]
+      for (let i = 0; i < 100; i++) {
+        particles.push(new Particle(x, y, color))
+      }
+    }
+
+    let lastShot = 0
+    const animate = (time) => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      if (time - lastShot > 700) {
+        // Left side
+        createFirework(canvas.width * 0.15, canvas.height * 0.1 - 20)
+        // Right side
+        createFirework(canvas.width * 0.85, canvas.height * 0.1 - 20)
+        lastShot = time
+      }
+
+      particles = particles.filter(p => p.alpha > 0)
+      particles.forEach(p => {
+        p.update()
+        p.draw()
+      })
+
+      animationId = requestAnimationFrame(animate)
+    }
+
+    animationId = requestAnimationFrame(animate)
+    return () => {
+      cancelAnimationFrame(animationId)
+      window.removeEventListener('resize', resize)
+      if (canvas && ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+      }
+    }
+  }, [active])
+
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none',
+        zIndex: 15
+      }}
+    />
+  )
+}
+
 function EnvelopeReveal() {
   const [phase, setPhase] = useState('idle') // idle | opening | open
   const [visible, setVisible] = useState(false)
+  const [isIntersecting, setIsIntersecting] = useState(false)
   const sectionRef = useRef(null)
 
   useEffect(() => {
@@ -15,12 +121,12 @@ function EnvelopeReveal() {
     if (!el) return
     const observer = new IntersectionObserver(
       ([entry]) => {
+        setIsIntersecting(entry.isIntersecting)
         if (entry.isIntersecting) {
           setVisible(true)
-          observer.disconnect()
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     )
     observer.observe(el)
     return () => observer.disconnect()
@@ -39,6 +145,7 @@ function EnvelopeReveal() {
 
   return (
     <section ref={sectionRef} className="er-section" onClick={handleClick}>
+      <Fireworks active={phase === 'open' && isIntersecting} />
       <style>{`
         .er-section {
           position: relative;
