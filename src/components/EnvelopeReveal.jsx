@@ -69,9 +69,9 @@ function Fireworks({ active }) {
 
       if (time - lastShot > 700) {
         // Left side
-        createFirework(canvas.width * 0.15, canvas.height * 0.1 - 20)
+        createFirework(canvas.width * 0.15, canvas.height * 0.15 - 20)
         // Right side
-        createFirework(canvas.width * 0.85, canvas.height * 0.1 - 20)
+        createFirework(canvas.width * 0.85, canvas.height * 0.15 - 20)
         lastShot = time
       }
 
@@ -144,7 +144,7 @@ function EnvelopeReveal() {
   const isOpen = phase === 'opening' || phase === 'open'
 
   return (
-    <section ref={sectionRef} className="er-section" onClick={handleClick}>
+    <section ref={sectionRef} className={`er-section ${isOpen ? 'is-open' : ''}`} onClick={handleClick}>
       <Fireworks active={phase === 'open' && isIntersecting} />
       <style>{`
         .er-section {
@@ -161,14 +161,24 @@ function EnvelopeReveal() {
           user-select: none;
           padding: 40px 20px 30px;
           box-sizing: border-box;
+          transition: padding-top 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .er-section.is-open {
+          padding-top: 100px;
         }
 
-        /* ── Top header ── */
+        /* ── Top header (moves up when open) ── */
         .er-header {
           text-align: center;
           margin-bottom: 8px;
           position: relative;
+          transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 10;
         }
+        .er-section.is-open .er-header {
+          transform: translateY(-80px);
+        }
+
         .er-header-line {
           font-family: 'Montserrat', sans-serif;
           font-size: 28px;
@@ -193,7 +203,7 @@ function EnvelopeReveal() {
           margin: 2px 0 4px;
         }
 
-        /* ── Couple names ── */
+        /* ── Couple names (moves up when open) ── */
         .er-names-row {
           display: flex;
           align-items: center;
@@ -201,7 +211,13 @@ function EnvelopeReveal() {
           gap: 24px;
           margin-bottom: 40px;
           position: relative;
+          transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 10;
         }
+        .er-section.is-open .er-names-row {
+          transform: translateY(-94px);
+        }
+
         .er-name {
           font-family: 'Alex Brush';
           font-size: 48px;
@@ -209,7 +225,7 @@ function EnvelopeReveal() {
           font-weight: 500;
         }
 
-        /* ── Photo bg wrap (decoration between names and envelope) ── */
+        /* ── Photo bg wrap ── */
         .er-photo-bg-wrap {
           width: 50px;
           height: 50px;
@@ -220,6 +236,10 @@ function EnvelopeReveal() {
           margin: 0 auto 65px;
           position: relative;
           z-index: 1;
+          transition: opacity 0.5s ease;
+        }
+        .er-section.is-open .er-photo-bg-wrap {
+          opacity: 0;
         }
 
         /* ── Envelope shadow ── */
