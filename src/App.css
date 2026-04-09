@@ -627,12 +627,58 @@
 }
 
 /* Map */
-.savedate-map {
+/* Map card */
+.map-card-wrap {
   max-width: 480px;
   margin: 0 auto 36px;
-  border-radius: 12px;
+  background: #fff;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+}
+.map-card-header {
+  padding: 16px;
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.map-icon {
+  font-size: 1.4rem;
+}
+.map-title {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.savedate-map iframe {
+  width: 100%;
+  display: block;
+  filter: grayscale(0.1) sepia(0.1) brightness(1.02);
+  transition: filter 0.3s ease;
+}
+.savedate-map:hover iframe {
+  filter: none;
+}
+.map-directions-btn {
+  display: block;
+  padding: 14px;
+  background: var(--bg-white);
+  color: var(--accent-rose);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 1px solid #f0f0f0;
+}
+.map-directions-btn:hover {
+  background: #fdf6f7;
+  color: var(--accent-crimson);
 }
 
 /* Address */

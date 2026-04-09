@@ -1,5 +1,5 @@
 import React from 'react'
-import { RESTAURANT_NAME, RESTAURANT_MAP, LUNAR_DATE, DATE_FULL, DATE_ISO, BASE } from '../config'
+import { RESTAURANT_NAME, RESTAURANT_MAP, RESTAURANT_MAP_LINK, LUNAR_DATE, DATE_FULL, DATE_ISO, BASE } from '../config'
 
 // Compute calendar data from the wedding date in .env
 const _weddingDate = new Date(DATE_ISO)
@@ -56,22 +56,38 @@ function SaveTheDate() {
       </div>
 
       {RESTAURANT_MAP && (
-        <div className="savedate-map" data-animate>
-          <iframe
-            src={RESTAURANT_MAP}
-            width="100%"
-            height="300"
-            style={{ border: 0, borderRadius: '12px' }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Bản đồ nhà hàng"
-          />
+        <div className="map-card-wrap" data-animate>
+          <div className="map-card-header">
+            <span className="map-icon">📍</span>
+            <span className="map-title">Bản đồ chỉ dẫn</span>
+          </div>
+          <div className="savedate-map">
+            <iframe
+              src={RESTAURANT_MAP}
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Bản đồ nhà hàng"
+            />
+          </div>
+          {RESTAURANT_MAP_LINK && (
+            <a
+              href={RESTAURANT_MAP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="map-directions-btn"
+            >
+              Xem trên Google Maps
+            </a>
+          )}
         </div>
       )}
 
       <div className="savedate-address" data-animate>
-        <h3 className="address-display-heading">ADDRESS</h3>
+        <h3 className="address-display-heading">VỊ TRÍ</h3>
         <span className="address-display-name">{RESTAURANT_NAME}</span>
       </div>
 
