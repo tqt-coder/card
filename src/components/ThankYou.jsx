@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BASE } from '../config'
 
 function ThankYou() {
-  const [imgError, setImgError] = useState(false)
   const bridePhone = import.meta.env.VITE_BRIDE_PHONE
   const groomPhone = import.meta.env.VITE_GROOM_PHONE
   const brideName = import.meta.env.VITE_BRIDE_NAME
@@ -10,30 +9,20 @@ function ThankYou() {
 
   return (
     <section className="thankyou-section">
-      <div className="thankyou-poem" data-animate>
+      <div className="thankyou-poem animated" data-animate="true">
         <p>Non sông một chặng đường dài</p>
         <p>Ba sinh hữu hạnh, duyên trời thành đôi</p>
         <p>Tiệc vui chưa trọn niềm vui</p>
         <p>Sơ suất điều gì, mong người bỏ qua</p>
       </div>
 
-      <div className="thankyou-graphic" data-animate>
+      <div className="thankyou-graphic animated" data-animate="true">
         <h2 className="thankyou-text">THANK YOU</h2>
-        {!imgError ? (
-          <img
-            src={`${BASE}/images/wedding/thankyou.png`}
-            alt="Thank you"
-            className="thankyou-img"
-            onError={() => setImgError(true)}
-            loading="lazy"
-          />
-        ) : (
-          <img
-            src={`${BASE}/images/wedding/wedding-13.png`}
-            alt="Wedding Icon"
-            style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '0 auto', display: 'block' }}
-          />
-        )}
+        <img
+          src={`${BASE}/images/wedding/wedding-13.png`}
+          alt="Wedding Icon"
+          style={{ width: '100px', height: '100px', objectFit: 'cover', margin: '0px auto', display: 'block' }}
+        />
       </div>
 
       <div className="thankyou-contact" data-animate>
