@@ -35,6 +35,7 @@
     opacity 0.75s ease,
     transform 0.75s ease;
 }
+
 [data-animate].animated {
   opacity: 1;
   transform: translateY(0);
@@ -84,6 +85,7 @@
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
+
 .hero-border-inner {
   width: 100%;
   height: 100%;
@@ -105,10 +107,12 @@
   justify-content: center;
   pointer-events: none;
 }
+
 .hero-curved-text {
   width: 80%;
   max-width: 400px;
 }
+
 .hero-curved-text text {
   fill: rgba(255, 255, 255, 0.85);
   font-family: var(--font-cursive, 'Times New Roman', serif);
@@ -142,6 +146,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .invitation-names {
   font-family: var(--font-cursive);
   font-size: clamp(2rem, 7vw, 3.2rem);
@@ -149,6 +154,7 @@
   font-weight: 400;
   margin-bottom: 28px;
 }
+
 .invitation-date-row {
   display: flex;
   align-items: center;
@@ -159,18 +165,21 @@
   border-bottom: 1px solid #ddd;
   padding: 14px 0;
 }
+
 .invitation-date-item {
   display: flex;
   flex-direction: column;
   gap: 2px;
   padding: 0 20px;
 }
+
 .invitation-date-item .date-label {
   font-family: var(--font-body);
   font-size: 1.2rem;
   color: var(--text-gray);
   letter-spacing: 1px;
 }
+
 .invitation-date-number {
   font-family: ui-monospace;
   font-size: 3.5rem;
@@ -181,6 +190,7 @@
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
 }
+
 .invitation-vertical-text {
   position: absolute;
   right: 8px;
@@ -194,6 +204,7 @@
   white-space: nowrap;
   pointer-events: none;
 }
+
 .invitation-address {
   display: flex;
   align-items: center;
@@ -202,16 +213,19 @@
   margin-bottom: 36px;
   flex-wrap: wrap;
 }
+
 .address-script {
   font-family: var(--font-cursive);
   font-size: 1.5rem;
   color: var(--accent-rose);
 }
+
 .address-value {
   font-family: ui-monospace;
   font-size: 1.4rem;
   color: var(--text-dark);
 }
+
 .invitation-photos {
   display: flex;
   flex-direction: column;
@@ -219,11 +233,13 @@
   max-width: 480px;
   margin: 0 auto;
 }
+
 .invitation-photo {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
 }
+
 .invitation-photo img {
   width: 100%;
   height: auto;
@@ -238,10 +254,12 @@
   padding: 40px 20px;
   text-align: center;
 }
+
 .about-invite-text {
   margin-bottom: 45px;
   padding: 0 10px;
 }
+
 .about-invite-text p {
   font-family: var(--font-serif);
   font-size: 1.1rem;
@@ -252,17 +270,20 @@
   word-break: break-word;
   margin: 0 0 16px;
 }
+
 .about-invite-text p:first-child {
   font-family: var(--font-cursive);
   font-size: 1.8rem;
   color: var(--accent-rose);
   margin-bottom: 12px;
 }
+
 .about-invite-text p:last-child {
   font-weight: 600;
   color: var(--accent-crimson);
   letter-spacing: 0.5px;
 }
+
 .about-heading {
   font-family: var(--font-display);
   font-size: 1.7rem;
@@ -271,6 +292,7 @@
   margin-bottom: 28px;
   font-weight: 400;
 }
+
 .about-photos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -278,22 +300,26 @@
   max-width: 480px;
   margin: 0 auto 36px;
 }
+
 .about-photo {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
 }
+
 .about-photo img {
   width: 100%;
   height: 280px;
   object-fit: cover;
 }
+
 .about-countdown {
   display: flex;
   justify-content: center;
   gap: 14px;
   margin-bottom: 0px;
 }
+
 .about-count-box {
   display: flex;
   flex-direction: column;
@@ -303,6 +329,7 @@
   border-radius: 8px;
   min-width: 64px;
 }
+
 .count-value {
   font-family: ui-monospace;
   font-size: 1.7rem;
@@ -310,22 +337,26 @@
   color: var(--text-dark);
   line-height: 1.2;
 }
+
 .count-label {
   font-size: 0.8rem;
   color: var(--text-light);
   letter-spacing: 1px;
 }
+
 .about-today {
   font-size: 1.15rem;
   color: var(--accent-rose);
   margin-bottom: 36px;
 }
+
 .about-names {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2px;
 }
+
 .about-bride,
 .about-groom {
   font-family: var(--font-cursive);
@@ -333,6 +364,7 @@
   color: var(--accent-pink);
   line-height: 1.2;
 }
+
 .about-amp {
   font-family: var(--font-cursive);
   font-size: 2rem;
@@ -347,14 +379,16 @@
   padding: 40px 24px;
   text-align: center;
 }
+
 .poem-header-red {
   background: linear-gradient(135deg, #6a1525 0%, #8a2035 50%, #5a1020 100%);
 }
+
 .poem-text-script {
   font-family: var(--font-cursive);
-  font-size: clamp(1rem, 3.8vw, 1.45rem);
+  font-size: clamp(1.2rem, 3.2vw, 1.6rem);
   color: var(--accent-gold);
-  line-height: 2.4;
+  line-height: 2;
 }
 
 /* ============================================================
@@ -363,11 +397,13 @@
 .poem-oval-section {
   background: var(--bg-white);
 }
+
 .poem-oval-photo-wrap {
   display: flex;
   justify-content: center;
   padding: 48px 20px;
 }
+
 .oval-frame {
   width: min(340px, 78vw);
   height: min(400px, 95vw);
@@ -375,6 +411,7 @@
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
+
 .oval-frame img {
   width: 100%;
   height: 100%;
@@ -388,11 +425,13 @@
 .love-gallery-section {
   background: var(--bg-white);
 }
+
 .love-content {
   padding: 36px 20px 40px;
   max-width: 540px;
   margin: 0 auto;
 }
+
 .love-title {
   font-family: var(--font-cursive);
   font-size: 4.2rem;
@@ -400,10 +439,12 @@
   font-weight: 500;
   text-align: center;
 }
+
 .love-quote {
   margin-bottom: 26px;
   text-align: center;
 }
+
 .love-quote p {
   font-family: var(--font-serif);
   font-size: 2rem;
@@ -413,6 +454,7 @@
   color: var(--text-gray);
   letter-spacing: 0.5px;
 }
+
 .love-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -420,11 +462,13 @@
   gap: 8px;
   margin-bottom: 18px;
 }
+
 .love-photo {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
+
 .love-photo img {
   width: 100%;
   height: 100%;
@@ -433,25 +477,31 @@
   display: block;
   transition: transform 0.5s ease;
 }
+
 .love-photo:hover img {
   transform: scale(1.05);
 }
+
 .love-photo-1 {
   grid-column: 1;
   grid-row: 1 / 3;
 }
+
 .love-photo-2 {
   grid-column: 2;
   grid-row: 1;
 }
+
 .love-photo-3 {
   grid-column: 2;
   grid-row: 2;
 }
+
 .love-photo-4 {
   grid-column: 1 / 3;
   grid-row: 3;
 }
+
 .love-freedom {
   font-family: var(--font-body);
   font-size: 0.6rem;
@@ -467,17 +517,20 @@
 .loveyou-section {
   background: var(--bg-white);
 }
+
 .loveyou-content {
   padding: 36px 20px 48px;
   max-width: 540px;
   margin: 0 auto;
 }
+
 .loveyou-main {
   display: flex;
   gap: 14px;
   align-items: stretch;
   margin-bottom: 28px;
 }
+
 .loveyou-photo {
   flex: 1;
   border-radius: 8px;
@@ -485,6 +538,7 @@
   width: 100%;
   object-fit: cover;
 }
+
 .loveyou-text-vertical {
   display: flex;
   flex-direction: column;
@@ -498,10 +552,12 @@
   white-space: nowrap;
   flex-shrink: 0;
 }
+
 .loveyou-heart {
   color: var(--accent-rose);
   font-size: 1.1rem;
 }
+
 .loveyou-small-oval {
   width: 110px;
   height: 110px;
@@ -510,6 +566,7 @@
   margin-left: auto;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
+
 .loveyou-small-oval img {
   width: 100%;
   height: 100%;
@@ -524,6 +581,7 @@
   padding: 60px 20px;
   text-align: center;
 }
+
 .savedate-heading {
   font-family: var(--font-cursive);
   font-size: clamp(2.4rem, 8vw, 3.5rem);
@@ -537,18 +595,21 @@
   max-width: 360px;
   margin: 0 auto 36px;
 }
+
 .calendar {
   border: 2px solid var(--accent-pink);
   border-radius: 8px;
   padding: 18px;
   background: #fff;
 }
+
 .cal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 14px;
 }
+
 .cal-month,
 .cal-year {
   font-family: 'ui-monospace';
@@ -556,6 +617,7 @@
   color: var(--accent-rose);
   font-weight: 600;
 }
+
 .cal-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -564,6 +626,7 @@
   border-bottom: 2px solid var(--accent-pink);
   margin-bottom: 8px;
 }
+
 .cal-weekday {
   font-family: var(--font-body);
   font-size: 0.58rem;
@@ -572,11 +635,13 @@
   color: var(--text-gray);
   text-align: center;
 }
+
 .cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
 }
+
 .cal-cell {
   font-family: var(--font-body);
   font-size: 0.82rem;
@@ -585,14 +650,17 @@
   padding: 7px 0;
   position: relative;
 }
+
 .cal-cell.cal-empty {
   visibility: hidden;
 }
+
 .cal-cell.cal-highlight {
   font-weight: 700;
   color: var(--accent-rose);
   font-size: 0.9rem;
 }
+
 .cal-heart {
   position: absolute;
   bottom: -13px;
@@ -606,6 +674,7 @@
 .savedate-time {
   margin-bottom: 36px;
 }
+
 .savedate-time-label {
   font-family: var(--font-display);
   font-size: 1.75rem;
@@ -614,12 +683,14 @@
   margin-bottom: 10px;
   font-weight: 400;
 }
+
 .savedate-time-value {
   font-family: var(--font-serif);
   font-size: 1rem;
   color: var(--accent-rose);
   margin-bottom: 4px;
 }
+
 .savedate-time-lunar {
   font-family: var(--font-serif);
   font-size: 0.92rem;
@@ -637,6 +708,7 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid #f0f0f0;
 }
+
 .map-card-header {
   padding: 16px;
   background: #fafafa;
@@ -645,24 +717,29 @@
   align-items: center;
   gap: 10px;
 }
+
 .map-icon {
   font-size: 1.4rem;
 }
+
 .map-title {
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-dark);
 }
+
 .savedate-map iframe {
   width: 100%;
   display: block;
   filter: grayscale(0.1) sepia(0.1) brightness(1.02);
   transition: filter 0.3s ease;
 }
+
 .savedate-map:hover iframe {
   filter: none;
 }
+
 .map-directions-btn {
   display: block;
   padding: 14px;
@@ -676,6 +753,7 @@
   transition: all 0.3s ease;
   border-top: 1px solid #f0f0f0;
 }
+
 .map-directions-btn:hover {
   background: #fdf6f7;
   color: var(--accent-crimson);
@@ -690,18 +768,21 @@
   margin-bottom: 28px;
   flex-wrap: wrap;
 }
+
 .address-display-heading {
   font-family: var(--font-display);
   font-size: 1.2rem;
   color: var(--text-dark);
   font-weight: 400;
 }
+
 .address-display-name {
   font-family: var(--font-serif);
   font-size: 1.3rem;
   color: var(--accent-rose);
   font-style: italic;
 }
+
 .savedate-photo {
   max-width: 480px;
   margin: 0 auto;
@@ -709,6 +790,7 @@
   overflow: hidden;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
 }
+
 .savedate-photo img {
   width: 100%;
   display: block;
@@ -721,6 +803,7 @@
   background: var(--bg);
   padding: 60px 20px;
 }
+
 .rsvp-card {
   background: var(--bg-white);
   border-radius: 16px;
@@ -729,6 +812,7 @@
   margin: 0 auto 36px;
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.06);
 }
+
 .rsvp-heading {
   font-family: var(--font-body);
   font-size: 1.25rem;
@@ -737,22 +821,26 @@
   margin-bottom: 22px;
   text-align: center;
 }
+
 .rsvp-error {
   color: var(--accent-rose);
   text-align: center;
   margin-bottom: 14px;
   font-size: 0.88rem;
 }
+
 .rsvp-field {
   margin-bottom: 18px;
 }
-.rsvp-field > label {
+
+.rsvp-field>label {
   display: block;
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 7px;
 }
+
 .rsvp-field input[type='text'] {
   width: 100%;
   padding: 12px 16px;
@@ -765,14 +853,17 @@
   transition: border-color 0.3s;
   box-sizing: border-box;
 }
+
 .rsvp-field input[type='text']:focus {
   border-color: var(--accent-rose);
 }
+
 .rsvp-radio-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .rsvp-radio {
   display: flex;
   align-items: center;
@@ -782,9 +873,11 @@
   cursor: pointer;
   padding: 6px 0;
 }
+
 .rsvp-radio input[type='radio'] {
   display: none;
 }
+
 .radio-dot {
   width: 18px;
   height: 18px;
@@ -794,9 +887,11 @@
   position: relative;
   transition: border-color 0.3s;
 }
+
 .rsvp-radio.active .radio-dot {
   border-color: var(--accent-rose);
 }
+
 .rsvp-radio.active .radio-dot::after {
   content: '';
   position: absolute;
@@ -807,6 +902,7 @@
   background: var(--accent-rose);
   border-radius: 50%;
 }
+
 .rsvp-btn {
   width: 100%;
   padding: 13px;
@@ -822,38 +918,46 @@
     background 0.3s,
     transform 0.2s;
 }
+
 .rsvp-btn:hover {
   background: var(--accent-crimson);
   transform: translateY(-1px);
 }
+
 .rsvp-btn:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }
+
 .rsvp-success-msg {
   text-align: center;
   padding: 18px 0;
 }
+
 .rsvp-success-msg h2 {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   color: var(--text-dark);
   margin-bottom: 8px;
 }
+
 .rsvp-success-msg p {
   color: var(--text-gray);
   margin-bottom: 18px;
 }
+
 .rsvp-envelopes {
   font-size: 2.4rem;
   margin-bottom: 14px;
   text-align: center;
 }
+
 .rsvp-qr-wrap {
   text-align: center;
   max-width: 420px;
   margin: 0 auto;
 }
+
 .qr-card {
   background: var(--accent-rose);
   border-radius: 14px;
@@ -861,6 +965,7 @@
   display: inline-block;
   margin-bottom: 14px;
 }
+
 .qr-name {
   font-family: var(--font-cursive);
   font-size: 1.8rem;
@@ -868,6 +973,7 @@
   margin-bottom: 12px;
   font-weight: 400;
 }
+
 .qr-image {
   width: 170px;
   height: 170px;
@@ -876,6 +982,7 @@
   object-fit: contain;
   padding: 8px;
 }
+
 .qr-hint {
   font-size: 0.82rem;
   color: var(--accent-rose);
@@ -891,15 +998,18 @@
   padding: 60px 20px 50px;
   text-align: center;
 }
+
 .thankyou-poem {
   margin-bottom: 36px;
 }
+
 .thankyou-poem p {
   font-family: var(--font-serif);
   font-size: 1.08rem;
   color: var(--text-dark);
   line-height: 2.4;
 }
+
 .thankyou-text {
   font-family: var(--font-display);
   font-size: 2rem;
@@ -908,6 +1018,7 @@
   font-weight: 400;
   margin-bottom: 14px;
 }
+
 .thankyou-img {
   max-width: 200px;
   margin: 0 auto;
@@ -922,6 +1033,7 @@
   .about-photo img {
     height: 360px;
   }
+
   .love-grid {
     gap: 10px;
   }
