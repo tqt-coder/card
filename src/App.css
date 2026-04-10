@@ -1025,6 +1025,85 @@
   display: block;
 }
 
+.thankyou-contact {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  background: var(--bg);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-rose);
+  border-radius: 50%;
+  color: white;
+}
+
+.contact-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-info {
+  flex: 1;
+  text-align: left;
+}
+
+.contact-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.contact-name {
+  font-family: var(--font-cursive);
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.contact-number {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--accent-rose);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-number:hover {
+  color: var(--accent-crimson);
+}
+
 
 /* ============================================================
    RESPONSIVE — Scale the 500px layout on smaller screens
